@@ -39,5 +39,6 @@ When spawning fresh-context Goldfish subagents (`invoke_subagent` in Antigravity
 This session runs inside the `modular-egm` Nix devShell with pre-configured tools:
 - **Browser & E2E Inspection**: `egm-playwright-mcp` (registered as the `playwright` MCP server) and `playwright` CLI with Nix-provided Chromium/Firefox binaries (`$PLAYWRIGHT_BROWSERS_PATH`).
 - **Surgical AST & Search**: `ast-grep` (`sg`), `ripgrep` (`rg`), `fd`, `ctags` (`universal-ctags`), `jq`, `yq`, and `gh`. Prefer structural and lexical searches before reading large files.
+- **Antigravity Command Execution (`BypassSandbox: true`)**: When running inside the `modular-egm` Nix devShell on Antigravity, ALWAYS pass `BypassSandbox: true` on `run_command` tool calls (do not attempt `BypassSandbox: false` first).
 
 <!-- <<< MODULAR-EGM-END <<< -->

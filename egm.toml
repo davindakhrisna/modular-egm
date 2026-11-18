@@ -1,0 +1,56 @@
+# ==============================================================================
+# modular-egm — Central Configuration & Two-Tier Model Routing
+# ==============================================================================
+# Top Orchestrator Models run:
+#   - The Elephant (root session: egm-brainstorm, egm-draft, egm-resolve)
+#   - Heavy Critique Goldfish (egm-design, egm-implementation-readiness,
+#     egm-inventive-catalyst, egm-zoom-out)
+#
+# Lighter Worker Models run:
+#   - Comprehension & Structural Goldfish (egm-comprehension, egm-structural,
+#     egm-style, egm-codebase-details, egm-synthesizer)
+#   - Reconnaissance & Cartography (egm-bootstrap-orchestrator, AST/Playwright)
+# ==============================================================================
+
+[workspace]
+artifact_dir = "modular-egm/.workspace/designs"
+playwright_dir = "modular-egm/.workspace/playwright"
+scratch_dir = "modular-egm/.workspace/scratch"
+
+[harnesses.codex]
+name = "Codex"
+binary = "codex"
+orchestrator_model = "astra"
+worker_model = "terra"
+
+[harnesses.claude]
+name = "Claude Code"
+binary = "claude"
+orchestrator_model = "fable"
+worker_model = "sonnet"
+
+[harnesses.antigravity]
+name = "Antigravity"
+binary = "agy"
+orchestrator_model = "argon"
+worker_model = "hydrogen"
+subagent_heavy_tier = "inherit"
+subagent_light_tier = "flash"
+
+[tiers.heavy_critique]
+personas = [
+  "egm-design",
+  "egm-implementation-readiness",
+  "egm-inventive-catalyst",
+  "egm-zoom-out",
+]
+
+[tiers.light_recon]
+personas = [
+  "egm-comprehension",
+  "egm-codebase-details",
+  "egm-structural",
+  "egm-style",
+  "egm-synthesizer",
+  "egm-bootstrap-orchestrator",
+]
